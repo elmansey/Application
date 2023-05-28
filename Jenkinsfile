@@ -20,11 +20,16 @@ pipeline{
         }
         stage("CD") {
             steps {
-                sh """ 
-                    kubectl apply -f namespace.yaml
-                    kubectl apply -f simple-app-deployment.yaml
-                    kubectl apply -f simple-app-service.yaml
-                   """
+                dir('./DeploymentFiles') {
+                    script {
+                        sh """ 
+                            kubectl apply -f namespace.yaml
+                            kubectl apply -f simple-app-deployment.yaml
+                            kubectl apply -f simple-app-service.yaml
+                        """
+                    }
+                } 
+
             }
         }
     }
