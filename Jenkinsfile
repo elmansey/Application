@@ -12,7 +12,7 @@ pipeline{
         stage("CI"){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github_credentials',usernameVariable: 'GITHUB_USERNAME',passwordVariable: 'GITHUB_PASS')]){
-                    git branch: 'master', credentialsId: 'github-token', url: 'https://github.com/elmansey/Application'
+                    git branch: 'master', credentialsId: 'github_token', url: 'https://github.com/elmansey/Application'
                 }
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_credentials',usernameVariable: 'DOCKER_USERNAME',passwordVariable: 'DOCKER_PASS')]){
                   sh 'docker build . -t elmansey/simple-app'
