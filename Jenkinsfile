@@ -23,6 +23,7 @@ pipeline{
                 dir('./DeploymentFiles') {
                     script {
                         sh """ 
+                            kubectl delete deployment --all -n application
                             kubectl apply -f namespace.yaml
                             kubectl apply -f simple-app-deployment.yaml
                             kubectl apply -f simple-app-service.yaml

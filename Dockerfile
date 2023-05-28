@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx
 
 RUN rm -rf /usr/share/nginx/html/*
 COPY ./src/style.css /usr/share/nginx/html
