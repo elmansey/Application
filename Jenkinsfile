@@ -2,12 +2,13 @@ pipeline{
     agent {
         label 'slave-1'
     }
-    stage("Verify Branch"){
-        steps {
-            echo "$GIT_BRANCH"
-        }
-    }
+
     stages {
+        stage("Verify Branch"){
+            steps {
+                echo "$GIT_BRANCH"
+            }
+        }
         stage("CI"){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github_credentials',usernameVariable: 'GITHUB_USERNAME',passwordVariable: 'GITHUB_PASS')]){
