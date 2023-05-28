@@ -3,8 +3,6 @@
 This repository contains the simple app to use in ci cd pipeline .
 
 
-## Overview
-
 
 ## Getting Started
 
@@ -15,6 +13,7 @@ $ git clone https://github.com/elmansey/Application.git
 ```
 
 ## Project hierarchy
+![image](https://github.com/elmansey/Application/assets/89076648/d16a971f-405d-469f-b524-afceee59c690)
 
 ## The main Rebo That Used to create Infrastructure  [here](https://github.com/elmansey/Infrastructure)
 
